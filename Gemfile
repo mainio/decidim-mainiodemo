@@ -8,6 +8,8 @@ gem "decidim", "0.16.0"
 # gem "decidim-consultations", "0.16.0"
 # gem "decidim-initiatives", "0.16.0"
 
+gem "decidim-plans", "~> 0.16.0"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 3.0"
