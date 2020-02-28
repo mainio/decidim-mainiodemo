@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.16.0"
-# gem "decidim-consultations", "0.16.0"
+gem "decidim-consultations", "0.16.0"
 # gem "decidim-initiatives", "0.16.0"
 
 gem "decidim-plans", "~> 0.16.0"
