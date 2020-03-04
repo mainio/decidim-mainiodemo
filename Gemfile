@@ -18,7 +18,7 @@ gem "decidim-plans", git: "git@github.com:mainio/decidim-module-plans.git"
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 3.0"
+gem "puma", "~> 3.12"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
