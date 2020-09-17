@@ -6,19 +6,19 @@ ruby RUBY_VERSION
 
 # Run updates by following the Decidim upgrade instructions:
 # https://github.com/decidim/decidim/blob/master/docs/getting_started.md#keeping-your-app-up-to-date
-DECIDIM_VERSION = "~> 0.20.0"
-DECIDIM_MODULE_VERSION = "~> 0.20.0"
+DECIDIM_VERSION = "~> 0.22.0"
+DECIDIM_MODULE_VERSION = "~> 0.22.0"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
 # gem "decidim-plans", DECIDIM_MODULE_VERSION
-gem "decidim-plans", git: "git@github.com:mainio/decidim-module-plans.git"
+gem "decidim-plans", git: "git@github.com:mainio/decidim-module-plans.git", branch: "develop"
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 3.0"
+gem "puma", "~> 4.3.3"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
