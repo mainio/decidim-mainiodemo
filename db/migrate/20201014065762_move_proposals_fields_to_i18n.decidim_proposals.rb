@@ -10,9 +10,18 @@ class MoveProposalsFieldsToI18n < ActiveRecord::Migration[5.2]
 
     PaperTrail.request(enabled: false) do
       Decidim::Proposals::Proposal.find_each do |proposal|
+        next unless proposal.component
+        next unless proposal.component.participatory_space
+
         author = proposal.coauthorships.first.author
 
-        locale = author.try(:locale).presence || author.try(:default_locale).presence || author.try(:organization).try(:default_locale).presence
+        locale = if author
+                   author.try(:locale).presence || author.try(:default_locale).presence || author.try(:organization).try(:default_locale).presence
+                 elsif proposal.component && proposal.component.participatory_space
+                   proposal.component.participatory_space.organization.default_locale
+                 else
+                   "fi"
+                 end
 
         proposal.new_title = {
           locale => proposal.title
@@ -21,7 +30,7 @@ class MoveProposalsFieldsToI18n < ActiveRecord::Migration[5.2]
           locale => proposal.body
         }
 
-        proposal.save!
+        proposal.save(validate: false)
       end
     end
 
