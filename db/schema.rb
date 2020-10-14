@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_065783) do
+ActiveRecord::Schema.define(version: 2020_10_14_071610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1120,6 +1120,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_065783) do
     t.datetime "updated_at", null: false
     t.string "update_token"
     t.datetime "closed_at"
+    t.integer "comments_count", default: 0, null: false
     t.index ["answered_at"], name: "index_decidim_plans_plans_on_answered_at"
     t.index ["closed_at"], name: "index_decidim_plans_plans_on_closed_at"
     t.index ["decidim_category_id"], name: "index_decidim_plans_plans_on_decidim_category_id"
@@ -1138,7 +1139,9 @@ ActiveRecord::Schema.define(version: 2020_10_14_065783) do
     t.jsonb "help"
     t.boolean "mandatory"
     t.string "section_type"
-    t.integer "answer_length", default: 0
+    t.jsonb "settings", default: {}
+    t.jsonb "information_label"
+    t.jsonb "information"
     t.index ["decidim_component_id"], name: "index_decidim_plans_sections_on_decidim_component_id"
     t.index ["position"], name: "index_decidim_plans_sections_on_position"
   end
@@ -1582,6 +1585,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_065783) do
     t.datetime "created_at"
     t.text "object_changes"
     t.integer "transaction_id"
+    t.jsonb "comment"
     t.index ["item_id", "item_type"], name: "index_versions_on_item_id_and_item_type"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
     t.index ["transaction_id"], name: "index_versions_on_transaction_id"
