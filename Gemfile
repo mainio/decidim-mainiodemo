@@ -6,15 +6,17 @@ ruby RUBY_VERSION
 
 # Run updates by following the Decidim upgrade instructions:
 # https://github.com/decidim/decidim/blob/master/docs/getting_started.md#keeping-your-app-up-to-date
-DECIDIM_VERSION = "~> 0.22.0"
-DECIDIM_MODULE_VERSION = "~> 0.22.0"
+#DECIDIM_VERSION = "~> 0.22.0"
+DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.23-stable" }
+#DECIDIM_MODULE_VERSION = "~> 0.22.0"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
 # gem "decidim-plans", DECIDIM_MODULE_VERSION
-gem "decidim-plans", git: "git@github.com:mainio/decidim-module-plans.git", branch: "develop"
+gem "decidim-plans", github: "mainio/decidim-module-plans", branch: "develop"
+gem "decidim-favorites", github: "mainio/decidim-module-favorites", branch: "master"
 
 gem "bootsnap", "~> 1.3"
 
