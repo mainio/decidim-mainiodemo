@@ -835,6 +835,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-favorites!
   decidim-plans!
+  decidim-templates!
   dotenv-rails (~> 2.1, >= 2.1.1)
   faker (~> 1.9)
   letter_opener_web (~> 1.3)

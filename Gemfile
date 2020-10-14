@@ -12,6 +12,7 @@ DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.23-stable" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
+gem "decidim-templates", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
 # gem "decidim-plans", DECIDIM_MODULE_VERSION
